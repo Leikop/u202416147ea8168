@@ -3,6 +3,7 @@
     <h1 class="text-3xl font-bold mb-2">{{ $t('form.title') }}</h1>
     <p class="text-gray-600 mb-5">{{ $t('form.subtitle') }}</p>
 
+
     <pv-card class="shadow-2">
       <template #content>
         <form @submit.prevent="submitForm" class="flex flex-column gap-4">
@@ -83,5 +84,6 @@ const submitForm = async () => {
 
 const cancel = () => {
   router.push('/home');
+
 };
 </script>

@@ -1,8 +1,11 @@
-
 import axios from 'axios';
 
-export const http = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL,
-    headers: { 'Content-type': 'application/json' }
-
-});
+export class BaseApi {
+    #http;
+    constructor(baseUrl) {
+        this.#http = axios.create({ baseURL: baseUrl });
+    }
+    get http() {
+        return this.#http;
+    }
+}

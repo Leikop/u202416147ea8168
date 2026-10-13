@@ -1,15 +1,31 @@
+import {createRouter, createWebHistory} from "vue-router";
+import Home from "./shared/presentation/views/home.vue";
 
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from './showroom/presentation/views/home.vue';
-import NewItem from './showroom/presentation/views/new-vehicle-inventory-item.vue';
-import PageNotFound from './shared/presentation/views/page-not-found.vue';
+const vehicleList = () => import('./vehicle/presentation/views/vehicle-list.vue');
+const about = () => import('./shared/presentation/views/about.vue');
+const pageNotFound = () => import('./shared/presentation/views/page-not-found.vue');
 
-export default createRouter({
-    history: createWebHistory(),
-    routes: [
-        { path: '/', redirect: '/home' },
-        { path: '/home', component: Home, meta: { title: 'Home' } },
-        { path: '/vehicle/items/new', component: NewItem, meta: { title: 'New Item' } },
-        { path: '/:pathMatch(.*)*', component: PageNotFound, meta: { title: 'Not Found' } }
-    ]
+
+const routes = [
+    { path: '/home',            name: 'home',       component: Home,        meta: { title: 'Home' } },
+    { path: '/about',           name: 'about',      component: about,       meta: { title: 'About' } },
+    { path: '/vehicles',        name: 'vehicles',   component: vehicleList, meta: { title: 'Vehicles' } },
+    { path: '/',                redirect: '/home' },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: pageNotFound, meta: { title: 'Page Not Found' } }
+];
+
+const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: routes,
+
 });
+
+router.beforeEach((to, from) => {
+    console.log(`Navigating from ${from.name} to ${to.name}`);
+    let baseTitle = 'Vehicle Showroom';
+    document.title = `${baseTitle} - ${to.meta['title']}`;
+
+    return true;
+});
+
+export default router;

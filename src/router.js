@@ -1,7 +1,4 @@
-/**
- * @summary Application Router Configuration
- * @author Piero Francisco Montes Chang
- */
+
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from './showroom/presentation/views/home.vue';
 import NewItem from './showroom/presentation/views/new-vehicle-inventory-item.vue';

@@ -39,4 +39,5 @@ export const useShowroomStore = defineStore('showroom', {
             await this.fetchItems();
         }
     }
+
 });

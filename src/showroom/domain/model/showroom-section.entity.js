@@ -6,4 +6,5 @@ export class ShowroomSection {
         this.vehicleCategory = vehicleCategory;
         this.maxCapacity = maxCapacity;
     }
+
 }

@@ -18,6 +18,7 @@
   },
   "card": { "total": "Vehículos Totales",
     "capacity": "Capacidad Disponible",
-    "empty": "Sin Vehículos"
+    "empty": "Sin Vehículos",
+
   }
 }

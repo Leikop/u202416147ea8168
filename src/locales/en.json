@@ -14,5 +14,6 @@
     "cancel": "Cancel" },
   "card": { "total": "Total Vehicles",
     "capacity": "Available Capacity",
-    "empty": "No Vehicles" }
+    "empty": "No Vehicles" },
+
 }

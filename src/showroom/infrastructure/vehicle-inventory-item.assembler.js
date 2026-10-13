@@ -9,4 +9,5 @@ export class VehicleInventoryItemAssembler {
         if (response.status !== 200) return [];
         return response.data.map(r => this.toEntityFromResource(r));
     }
+
 }

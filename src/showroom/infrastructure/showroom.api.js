@@ -10,5 +10,6 @@ export class ShowroomApi {
     }
     createItem(data) {
         return http.post(import.meta.env.VITE_VEHICLE_INVENTORY_ITEMS_ENDPOINT_PATH, data);
+
     }
 }
